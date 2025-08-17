@@ -1,8 +1,8 @@
 "use client";
 
-import Slider from "./Slider";
+import Slider from "./inputs/Slider";
 import { useControlsStore } from "../state/controlsStore";
-import Toogle from "./Toogle";
+import Toogle from "./inputs/Toogle";
 
 export default function ControlsPanel() {
   const {
