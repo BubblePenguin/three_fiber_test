@@ -2,10 +2,19 @@
 
 import Slider from "./Slider";
 import { useControlsStore } from "../state/controlsStore";
+import Toogle from "./Toogle";
 
 export default function ControlsPanel() {
-  const { scale, position, color, setScale, setPosition, setColor } =
-    useControlsStore();
+  const {
+    scale,
+    position,
+    color,
+    setScale,
+    setPosition,
+    setColor,
+    roof,
+    setRoof,
+  } = useControlsStore();
 
   return (
     <div className="basis-3/12 p-2 flex flex-col gap-2">
@@ -64,6 +73,11 @@ export default function ControlsPanel() {
         step={1}
         value={color.b}
         onChange={(e) => setColor("b", Number(e.target.value))}
+      />
+      <Toogle
+        label="Roof"
+        value={roof === "house"}
+        onChange={(e) => setRoof(e.target.checked ? "house" : "monkey")}
       />
     </div>
   );
